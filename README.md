@@ -1,31 +1,22 @@
-# PixelWin Labs website
+# PixelWin Labs — company website
 
-Three static pages for the company site: no build step, no scripts, no cookies. Upload the folder as it is to
-GitHub Pages, Cloudflare Pages, Netlify or Firebase Hosting.
+Plain static pages for GitHub Pages: `index.html` (about the company), `privacy.html` (Privacy Policy), `terms.html` (Terms of Service), `404.html`, `style.css`, `logo.png`, `.nojekyll`. No scripts, no cookies, no build step.
 
-| File | What it is |
-|---|---|
-| `index.html` | Home page: Pocket Puzzles: Offline Games and its fourteen games |
-| `privacy.html` | Privacy policy (linked from the Play Store listing and from the app's Settings) |
-| `terms.html` | Terms of service (the same text as the company site's `pixelwin-labs-site/terms.html`; change both together) |
-| `support.html` | Support address and common questions |
-| `style.css` | The one stylesheet |
-| `images/` | Logo, app icon and the ten game pictures |
+## Put it on GitHub Pages
+1. On github.com create a new **public** repository, for example `pixelwinlabs` (Pages is free for public repositories).
+2. Upload every file of this folder to the root of the repository (Add file › Upload files), including the empty `.nojekyll`.
+3. Repository › **Settings › Pages** › Source: *Deploy from a branch*, Branch: `main`, folder `/ (root)` › Save.
+4. After a minute or two the site is at `https://<your-github-name>.github.io/pixelwinlabs/`
+   (name the repository `<your-github-name>.github.io` instead and it is at `https://<your-github-name>.github.io/`).
+5. The links for the Play Console and the app: `…/privacy.html` and `…/terms.html`.
 
-## To fill in before it goes live
-- **Company name** — "PixelWin Labs" everywhere (header, footer, privacy policy section 1).
-- **Support email** — `pixelwinlabs@gmail.com` (Aftab, 2026-10-24) on every page (search for it). It must be a mailbox that is read.
-- **Country** — "India" in `privacy.html` section 1.
-- **Audience** — 18+ (Aftab, 2026-10-24): `privacy.html` "Children" and `terms.html` section 2 say so. The Play Console target audience must be 18+ too.
-- **Store button** — in `index.html` the button reads "Coming soon to Google Play"; the comment above it holds the
-  line to use once the app is published.
-- **Screenshots** — `index.html` has a screenshots section inside a comment; add `images/shot-1.png` … `shot-5.png`
-  and remove the comment markers.
-- **`app-ads.txt`** — add the one line AdMob gives you as a file named `app-ads.txt` in this folder.
-- **Dates** — "Last updated" in `privacy.html`.
+Own domain later: Settings › Pages › Custom domain, and a DNS record at the domain registrar (GitHub shows which).
 
-The ten game pictures are the hub's own card pictures; to redraw them:
-`cd game_hub && SITE_ASSETS_DIR=../website/images flutter test test/site_assets_test.dart`
+## Before publishing — check these
+- **Email**: `pixelwinlabs@gmail.com` (Aftab, 2026-10-24) is on every page. Check that mail to it is read.
+- **Country** India is an assumption. **Minimum age 18** (Aftab, 2026-10-24) — set the Play Console target audience to 18+ to match.
+- The privacy policy says the apps may use Google AdMob and Firebase (Crashlytics, Analytics) — the Play Store requires the policy to name them.
+- These texts are a sensible starting point, not legal advice.
 
 ## Domain
-`CNAME` holds `pocketpuzzles.pixelwinlabs.com` (Aftab's domain is pixelwinlabs.com). GitHub Pages reads it as the custom domain; the DNS records are set at the registrar.
+`CNAME` holds `pixelwinlabs.com`. GitHub Pages reads it as the custom domain; the DNS records are set at the registrar.
